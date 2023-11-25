@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signUp</title>
+    <link rel="stylesheet" href="sign.css">
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+    crossorigin="anonymous"
+  />
+  <link
+  rel="icon"
+  type="image/x-icon"
+  href="img/logo.jpg"
+/>
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-black" style="background-color: black (22,24,44)">
+          <div class="container-fluid ">
+            <a class="navbar-brand" href="detox.html">
+              <img class="logo" src="img/logo.jpg" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link1 active" aria-current="page" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link2" href="detox.html">Digital Detox</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link3" href="resources.html">Resources</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link4" href="quiz.html">Quiz</a>
+                </li>
+              </ul>
+              <span class="navbar-text">
+                <a href="signup.html" style="text-decoration: none;">Sign up</a>
+                <i class="fa fa-user" style="font-size: 20px; margin-left: 5px;"></i>
+              </span>
+            </div>
+          </div>
+        </nav>
+      </header>
+    <form action="action_page.php">
+        <div class="container">
+          <h1 style="color: white;">Sign Up</h1>
+          <hr>
+      
+          <label for="email" style="color: white;"><b>Email</b></label>
+          <input type="text" placeholder="Enter Email" name="email" required>
+      
+          <label for="psw" style="color: white;"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="psw" id="passwordInput" required>
+      
+          <label for="psw" style="color: white;"><b>Password</b></label>
+          <input type="password" placeholder="Repeat Password" name="psw" id="passwordInput" required>
+      
+          <label>
+            <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px" color="white"> Remember me
+          </label>
+
+          <div class="clearfix">
+            <button type="button" class="cancelbtn">Cancel</button>
+            <button type="submit" class="signupbtn">Sign Up</button>
+          </div>
+        </div>
+      </form>
+
+      <section class="main">
+      </section>
+      <div id="end"></div>
+      <footer  style="background-color:rgb(37, 36, 36)" class=" bg-footer text-white text-center text-lg-start">
+      <br>
+      <br>
+      <div class="container-fluid">
+        <div class="row">
+      
+          <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+            <h5 class="text-uppercase" style="position: relative; left: 100px;">Call-to-Action</h5>
+            <p style="position: relative; left: 100px">
+              "Start Your Digital Detox."
+            </p>
+          </div>
+      
+      <div class="text-center p-3" id="animatedText">
+        © 2023 Astana IT University:
+        <a class="text-white" href="https://github.com/tuimedaqtea">Aru Alimzhanova</a>
+      </div>
+    </body>
+    </html>

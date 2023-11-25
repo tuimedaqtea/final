@@ -1,0 +1,137 @@
+body {
+    zoom: 90%;
+    font-family:"Gill Sans", sans-serif;
+    margin: 0;
+    padding: 0;
+   background-color:rgb(37, 36, 36)
+  }
+ .navbar{
+    position:static;
+ }
+  .navbar-brand .logo {
+    width: 60px;
+    height: auto;
+    position: relative;
+    left: 30px
+  }
+  .navbar-nav .nav-item::after {
+    content: "\00a0";
+  }
+  .navbar-nav .nav-link1,
+  .navbar-nav .nav-link2,
+  .navbar-nav .nav-link3,
+  .navbar-nav .nav-link4 {
+    font-weight: bold;
+    color: white;
+    font-family: "Gill Sans", sans-serif;
+    text-decoration: none;
+    margin: 10px;
+    position: relative;
+    left: 25px;
+  }
+  .navbar-nav .nav-link1:hover,
+  .navbar-nav .nav-link2:hover,
+  .navbar-nav .nav-link3:hover
+  .navbar-nav .nav-link4:hover {
+    color: orange;
+  }
+  .navbar-text{
+    font-weight: bold;
+    color: white;
+    font-family: "Gill Sans", sans-serif;
+    text-decoration: none;
+    position: relative;
+    right: 50px;
+    margin: 5px;
+  }
+  .navbar-text:hover{
+    color:orange
+  }
+  .carousel-item {
+    display: block;
+    position: relative;
+    padding: 20px 0px;
+  }
+  .backgroundPicture{
+    position: relative;
+    left: 600px;
+  }
+  .platform {
+    position: absolute;
+    top: 40%;
+    text-align: center;
+    color: white;
+    left: 150px;
+    font-family: Palatino, URW Palladio L, serif;
+  }
+  
+  .SB {
+    position: absolute;
+    top: 50%;
+    text-align: center;
+    color: white;
+    left: 150px;
+    font-family:Palatino, URW Palladio L, serif;
+  }
+
+
+  .gif{
+    position: relative;
+    left: 600px;
+    width: 1300px;
+  }
+  .git push -u origin mainplatform1 {
+    position: absolute;
+    top: 45%;
+    text-align: center;
+    color: white;
+    left: 150px;
+    font-family: Palatino, URW Palladio L, serif;
+  }
+  
+  .SB2 {
+    position: absolute;
+    top: 55%;
+    text-align: center;
+    color: white ;
+    left: 150px;
+    font-family:Palatino, URW Palladio L, serif;
+  }
+
+  .main {
+    background-color: rgb(37, 36, 36);
+    padding: 20px 0;
+  }
+.col-md-4{
+    width: 500px;
+}
+.footer_name {
+  font-weight: bold;
+  text-decoration: none;
+}
+.footer_name2 {
+  font-weight: bold;
+  text-decoration: none;
+  top: 20px;
+  display: relative;
+}
+.footer_name:hover,
+.footer_name2:hover {
+  color: orangered;
+}
+h3 {
+  color: rgb(255,118,41);
+  text-align: center;
+  font-size: 30px
+}
+
+p {
+  color: #fff;
+  line-height: 1.5;
+  font-size: 20px
+}
+
+.btn-primary {
+  background-color:rgb(255,118,41) ; 
+  color: #ffffff; 
+}

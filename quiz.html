@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="img/logo.jpg"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="quiz.css">
+</head>
+<div id="start"> </div>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: black (22,24,44)">
+          <div class="container-fluid ">
+            <a class="navbar-brand" href="#">
+              <img class="logo" src="img/logo.jpg" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link1 active" aria-current="page" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link2" href="detox.html">Digital Detox</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link3" href="resources.html">Resources</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link4" href="quiz.html">Quiz</a>
+                </li>
+              </ul>
+              <span class="navbar-text">
+                <a href="signup.html" style="text-decoration: none;">Sign up</a>
+                <i class="fa fa-user" style="font-size: 20px; margin-left: 5px;"></i>
+              </span>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+<div class="quiz-container">
+    <h1>Life Unplugged Quiz</h1>
+    <div id="quiz"></div>
+    <button id="submit" onclick="submitQuiz()">Submit</button>
+</div>
+
+<script>
+    const quizData = [
+        // вопросы и варианты ответов
+        { question: "What is 'Digital Detox'?", answers: [
+        "A) A vacation related to the use of digital devices.", 
+        "B) A period when you consciously reduce the amount of time you spend online and on devices.", 
+        "C) The process of creating new digital technologies."], correct: "B" },
+        { question: "Why might you need a Digital Detox?", answers: [
+        "A) Your body and mind may be suffering from overuse of devices.",
+        "B) It's a fashion trend.",
+        "C) It's not required, everyone should be online all the time."], correct: "A" },
+        { question: "What problems can arise from excessive smartphone use?", answers: [
+        "A) Improved self-esteem.",
+        "B) Sleep problems and depression.",
+        "C) Increased productivity."], correct: "B" },
+        { question: "What topic does the book 'The Shallows' by Nicholas Carr explore?", answers: [
+        "A) The impact of the Internet on the world economy.",
+        "B) A guide to using the Internet safely.",
+        "C) How the Internet is changing our brains."], correct: "C" },
+        { question: "What is discussed in the book 'Digital Minimalism' by Cal Newport?", answers: [
+        "A) How to make the most of digital technology.",
+        "B) Ways to create your own digital technologies.",
+        "C) How to live in the digital age with minimal use of technology."], correct: "C" },
+        { question: "Which of the following activities are offline hobbies and activities?", answers: [
+        "A) Hiking.",
+        "B) Reading e-books.",
+        "C) Playing games on the internet."], correct: "A" },
+        { question: "What are the benefits of engaging in gardening?", answers: [
+        "A) Increased stress levels.",
+        "B) Improved physical health and contact with nature.",
+        "C) Addiction to digital devices."], correct: "B" },
+        { question: "Why might watching a video about detox be beneficial?", answers: [
+        "A) For entertainment.",
+        "B) To promote new digital technologies.",
+        "C) To assess one's own level of dependence on devices."], correct: "C" },
+        { question: "What is recommended to start a digital detox?", answers: [
+        "A) Carefully monitor your emotions while using the device.",
+        "B) Use your phone all the time.",
+        "C) Completely disconnect from the internet."], correct: "A" },
+        { question: "What is one benefit of reducing device use?", answers: [
+        "A) Increased stress.",
+        "B) Improved well-being, increased productivity, and better sleep.",
+        "C) No benefits at all."], correct: "B" }
+    ];
+
+    const quizContainer = document.getElementById('quiz');
+    const submitButton = document.getElementById('submit');
+    let score = 0;
+
+    function buildQuiz() {
+        quizData.forEach((data, index) => {
+            const questionDiv = document.createElement('div');
+            questionDiv.classList.add('question');
+            questionDiv.innerHTML = `<p>${index + 1}. ${data.question}</p>`;
+            
+            data.answers.forEach(answer => {
+                const label = document.createElement('label');
+                label.innerHTML = `<input type="radio" name="q${index}" value="${answer.charAt(0)}">${answer}</label>`;
+                questionDiv.appendChild(label);
+            });
+            
+            quizContainer.appendChild(questionDiv);
+        });
+    }
+
+    function submitQuiz() {
+        const answerContainers = quizContainer.querySelectorAll('.question');
+        answerContainers.forEach((question, index) => {
+            const selector = `input[name=q${index}]:checked`;
+            const userAnswer = (document.querySelector(selector) || {}).value;
+
+            if (userAnswer === quizData[index].correct) {
+                score++;
+                answerContainers[index].style.color = 'lightgreen';
+            } else {
+                answerContainers[index].style.color = 'red';
+            }
+        });
+
+        const resultsDiv = document.createElement('div');
+        resultsDiv.innerHTML = `<p>Your Score: ${score} out of ${quizData.length}</p>`;
+        quizContainer.appendChild(resultsDiv);
+
+        submitButton.style.display = 'none';
+    }
+    window.onload = function () {
+        buildQuiz();
+    };
+</script>
+
+<section class="main">
+</section>
+<div id="end"></div>
+<footer  style="background-color:rgb(37, 36, 36)" class=" bg-footer text-white text-center text-lg-start">
+<br>
+<br>
+<div class="container-fluid">
+  <div class="row">
+
+    <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+      <h5 class="text-uppercase" style="position: relative; left: 100px;">Call-to-Action</h5>
+      <p style="position: relative; left: 100px">
+        "Start Your Digital Detox."
+      </p>
+    </div>
+
+<div class="text-center p-3" id="animatedText">
+  © 2023 Astana IT University:
+  <a class="text-white" href="https://github.com/tuimedaqtea">Aru Alimzhanova</a>
+</div>
+
+</body>
+<script
+src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+crossorigin="anonymous"
+></script>
+<script
+src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+crossorigin="anonymous"
+></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+
+
+<script>
+function elementInView(elem) {
+var docViewTop = $(window).scrollTop();
+var docViewBottom = docViewTop + $(window).height();
+var elemTop = $(elem).offset().top;
+return elemTop <= docViewBottom;
+}
+$('.main, footer').css('opacity', '0');
+
+$(window).on('scroll', function() {
+if (elementInView('.main')) {
+$('.main').animate({ opacity: 1 }, 1000);
+}
+if (elementInView('footer')) {
+$('footer').animate({ opacity: 1 }, 1000);
+}
+});
+</script>
+</html>
